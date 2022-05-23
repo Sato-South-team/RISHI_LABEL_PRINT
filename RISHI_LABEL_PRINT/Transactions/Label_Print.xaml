@@ -1,0 +1,69 @@
+﻿<Window x:Class="RISHI_LABEL_PRINT.Transactions.Label_Print"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RISHI_LABEL_PRINT.Transactions"
+     Title="Scrap" Loaded="Window_Loaded" KeyDown="Window_KeyDown"  Style="{StaticResource PageStyle}" 
+      WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Height="50" Width="199" Margin="35,0,0,0" Grid.ColumnSpan="2">
+            <TextBlock FontWeight="Bold" FontSize="15" Width="190" x:Name="txtDatetime" Text="Date Time"  Foreground="Black"></TextBlock>
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <Image Name="image3" Stretch="Fill" VerticalAlignment="Top" Margin="0,15,0,0" Height="55" Width="300"  Source="/RISHI_LABEL_PRINT;component/Images/HorizantalLine.jpg"/>
+            <TextBlock Text="LABEL PRINTING" HorizontalAlignment="Center" FontFamily="Calibri" FontSize="20" Margin="10" Foreground="OrangeRed" FontWeight="ExtraBold" ></TextBlock>
+
+        </Grid>
+
+        <Border Style="{StaticResource BorderStyle}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="63,94,49,0">
+            <Grid Margin="5" x:Name="grid1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="290"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="290"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+                <ComboBox x:Name="cmbWono" Grid.Column="1" Height="Auto" SelectionChanged="CmbWono_SelectionChanged" />
+                <TextBox Grid.Column="1" x:Name="txtArticleno" Grid.Row="1"  IsReadOnly="True"  />
+                <TextBox Grid.Column="3" x:Name="txtPoNo" Grid.Row="1"  IsReadOnly="True" />
+                <TextBox Grid.Column="1" x:Name="txtqty" Grid.Row="2"  IsReadOnly="False" />
+                <ComboBox x:Name="cmbLine" Grid.Column="3"    />
+
+                <Label Grid.Row="0" Grid.Column="2" Content="Line NO:"  />
+                <Label Grid.Row="0" Content="Work Order No:"/>
+                <Label Grid.Row="1" Content="Article No:" Grid.Column="0"/>
+                <Label Grid.Row="1" Grid.Column="2" Content="PO No:"/>
+                <Label Grid.Row="2" Grid.Column="0" Content="Qty:"/>
+            </Grid>
+        </Border>
+        <Border Style="{StaticResource BorderStyle}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,229,0,0" Width="363"  >
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="115"/>
+                    <ColumnDefinition Width="115"/>
+                    <ColumnDefinition Width="115"/>
+                </Grid.ColumnDefinitions>
+                <Button ToolTip="Press Alt+U for Update"  x:Name="btnUpdate" Click="btnUpdate_Click">
+                    <TextBlock><Underline><Run Text="P"/></Underline><Run Text="rint"/></TextBlock>
+                </Button>
+                <Button ToolTip="Press Alt+C for Clear"  Grid.Column="1"  x:Name="btnClear" Click="btnClear_Click">
+                    <TextBlock><Underline><Run Text="C"/></Underline><Run Text="LEAR"/></TextBlock>
+                </Button>
+                <Button ToolTip="Press Alt+B for Back" Grid.Column="2"  x:Name="btnExit" Click="btnExit_Click">
+                    <TextBlock><Underline><Run Text="B"/></Underline><Run Text="ACK"/></TextBlock>
+                </Button>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>
