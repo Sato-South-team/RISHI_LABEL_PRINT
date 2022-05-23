@@ -149,7 +149,7 @@ namespace RISHI_LABEL_PRINT.StartUp
                 //NavigationService.GoBack();
                 this.Close();
                 StartUp.Login obj_page = new StartUp.Login();
-                obj_page.ShowDialog();
+                obj_page.ShowDialog();//111
             }
             catch (Exception ex)
             {
@@ -170,7 +170,7 @@ namespace RISHI_LABEL_PRINT.StartUp
             }
             if (Keyboard.IsKeyDown(Key.LeftAlt) && Keyboard.IsKeyDown(Key.B) || Keyboard.IsKeyDown(Key.RightAlt) && Keyboard.IsKeyDown(Key.B))
             {
-                btnExit_Click(sender, e);
+                btnExit_Click(sender, e);//test
             }
         }
 
